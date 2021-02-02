@@ -1,5 +1,6 @@
 %%PLOTS
 function plotHabit(ds,rs,uts,choices)
+%figure()
 roundN = length(ds);
 %figure()
 subplot(2,2,1)

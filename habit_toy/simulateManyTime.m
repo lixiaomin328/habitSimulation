@@ -21,7 +21,7 @@ for i = 1:RoundNum
     frequencyMostCommonChoice = max(sum(choices))/(sum(sum(choices)));
     frequencyLeastCommonChoice = min(sum(choices))/(sum(sum(choices)));
     frequencyMostValueChoice = sum(ucs)/length(ucs);
-    
+    i
     longestHabits = [longestHabits;longestHabit];
     secondlongHabits = [secondlongHabits;secondlongHabit];
     frequencyMostCommonChoices = [frequencyMostCommonChoices;frequencyMostCommonChoice];

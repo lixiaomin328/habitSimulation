@@ -6,7 +6,7 @@ sigma =0.1;
 kappa=.2; %threshold for relibility
 lambda_d = .3;
 lambda_r = .3;
-
+theta = 0.01;
 roundN = 1000;%period number
 %%%%initialization parameters%%%
 r0 = 1.3*ones(nChoice,1);
@@ -39,7 +39,7 @@ for round = 1:roundN
     dt = reliability(c_tlast,d_tlast,ut,r_tlast,lambda_d);
     rt = attraction(c_tlast,ut,r_tlast,lambda_r,nChoice);
     [ct,h] = choice(c_tlast,d_tlast,rt,kappa,nChoice);
-    ut = ut+ normrnd(0,sigma,[nChoice,1]);
+    ut = ut - theta*ut +normrnd(0,sigma,[nChoice,1]);
     maxUt = sign(ut -max(ut))+1;
     %%update 
     choices = [choices;ct'];
@@ -51,7 +51,7 @@ for round = 1:roundN
     
 end
 
-plotHabit(ds,rs,uts,choices)
+%plotHabit(ds,rs,uts,choices)
 
 % dtn=[];
 % for i =1:length(choices)

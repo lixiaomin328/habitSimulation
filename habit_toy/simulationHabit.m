@@ -1,12 +1,7 @@
 %%toy simulation1%%%%%%%%%
-function [choices,ds,uts,rs,hs,ucs]=simulationHabit(roundN)
+function [choices,ds,uts,rs,hs,ucs]=simulationHabit(roundN,nChoice,sigma,kappa,lambda_d,lambda_r,theta)
 %parameters%%%%%%%%%
-nChoice=3;
-sigma =0.1;
-kappa=.2; %threshold for relibility
-lambda_d = .3;
-lambda_r = .3;
-theta = 0.01;
+
 %%%%initialization parameters%%%
 r0 = 1.3*ones(nChoice,1);
 u0 =ones(nChoice,1)+normrnd(0,sigma,[nChoice,1]);
